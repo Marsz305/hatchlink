@@ -1,13 +1,35 @@
-import { env } from "cloudflare:workers";
-import { drizzle } from "drizzle-orm/d1";
+import "server-only";
+import postgres from "postgres";
+import { drizzle } from "drizzle-orm/postgres-js";
 import * as schema from "./schema";
 
-export function getDb() {
-  if (!env.DB) {
-    throw new Error(
-      "Cloudflare D1 binding `DB` is unavailable. Set the `d1` field in .openai/hosting.json to `DB` or let your control plane inject the real binding values before using the database."
-    );
+const globalForDb = globalThis as typeof globalThis & {
+  hatchLinkSql?: ReturnType<typeof postgres>;
+};
+
+function getSql() {
+  const connectionString = process.env.DATABASE_URL;
+
+  if (!connectionString) {
+    throw new Error("DATABASE_URL is not configured");
   }
 
-  return drizzle(env.DB, { schema });
+  // Reuse one connection pool within a serverless instance.
+  const sql =
+    globalForDb.hatchLinkSql ??
+    postgres(connectionString, {
+      max: 1,
+      prepare: false,
+      connect_timeout: 10,
+    });
+
+  if (process.env.NODE_ENV !== "production") {
+    globalForDb.hatchLinkSql = sql;
+  }
+
+  return sql;
+}
+
+export function getDb() {
+  return drizzle(getSql(), { schema });
 }
