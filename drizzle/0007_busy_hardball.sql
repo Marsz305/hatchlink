@@ -1,0 +1,1 @@
+CREATE INDEX `idx_support_messages_participant` ON `support_messages` (`participant_email`,`participant_role`);
