@@ -45,3 +45,59 @@
 .admin-area-label{background:#684a91;color:#fff;border:1px solid #9477bb;border-radius:8px;padding:7px 9px;font-size:12px;font-weight:900;letter-spacing:.06em}
 @media(max-width:900px){.mobile-nav .nav-buyer{color:#147f9d}.mobile-nav .nav-seller{color:#9a651b}.profile-menu{right:15px}}
 @media(max-width:600px){.admin-area-label{display:none}}
+
+/* Redesigned HatchLink Zimbabwe Authentication Styles */
+.login-page-wrapper{min-height:100vh;background:radial-gradient(circle at 50% 10%,#f0eee1 0%,#f7f5ed 100%);display:flex;align-items:center;justify-content:center;padding:32px 18px}
+.login-shell{width:100%;max-width:480px;display:flex;flex-direction:column;gap:18px}
+.login-top-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.login-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--green);text-decoration:none;font-weight:700;transition:transform .15s}
+.login-back-link:hover{transform:translateX(-2px);color:var(--forest)}
+.login-badge-pill{display:inline-flex;align-items:center;gap:6px;background:var(--mint);color:var(--forest);padding:6px 10px;border-radius:99px;font-size:11px;font-weight:800}
+.login-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px 28px;box-shadow:0 20px 50px rgba(16,37,30,.07)}
+.login-card-header{text-align:center;margin-bottom:24px}
+.login-brandmark-circle{width:56px;height:56px;background:#efc66f;border-radius:18px;display:grid;place-items:center;margin:0 auto 14px;box-shadow:0 8px 20px rgba(201,149,47,.25)}
+.login-card-header h1{font:700 30px Georgia,serif;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}
+.login-card-header h1 b{color:#c9952f}
+.login-subtitle{color:var(--muted);font-size:14px;line-height:1.5;margin:0}
+.login-tabs{display:grid;grid-template-columns:1fr 1fr;background:#f0f4f1;padding:4px;border-radius:14px;margin-bottom:20px}
+.login-tabs button{border:0;background:transparent;padding:10px;border-radius:10px;font-size:13px;font-weight:800;color:var(--muted);cursor:pointer;transition:all .15s}
+.login-tabs button.active{background:#fff;color:var(--forest);box-shadow:0 2px 8px rgba(16,37,30,.08)}
+.login-oauth-section{margin-bottom:18px}
+.google-signin-btn{width:100%;height:48px;border:1.5px solid #dce3dc;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;transition:all .15s;box-shadow:0 2px 6px rgba(16,37,30,.03)}
+.google-signin-btn:hover:not(:disabled){border-color:#b5c4b8;background:#fafbfa;box-shadow:0 4px 12px rgba(16,37,30,.06)}
+.google-signin-btn:disabled{opacity:.6;cursor:wait}
+.google-icon{width:20px;height:20px;flex:none}
+.login-divider{display:flex;align-items:center;margin:20px 0;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.login-divider:before,.login-divider:after{content:"";flex:1;border-bottom:1px solid var(--line)}
+.login-divider span{padding:0 12px}
+.login-form{display:grid;gap:16px}
+.login-field-group{display:flex;flex-direction:column;gap:6px}
+.login-field-group label{font-size:13px;font-weight:800;color:var(--ink)}
+.label-with-link{display:flex;justify-content:space-between;align-items:center}
+.forgot-link{font-size:12px;color:var(--green);font-weight:700;cursor:pointer}
+.forgot-link:hover{text-decoration:underline}
+.input-with-icon{position:relative;display:flex;align-items:center}
+.input-with-icon .field-icon{position:absolute;left:14px;width:18px;height:18px;color:#85968d;pointer-events:none}
+.input-with-icon input{width:100%;height:48px;border:1px solid var(--line);border-radius:12px;padding:0 42px 0 42px;background:#fff;font-size:14px;color:var(--ink);transition:all .15s}
+.input-with-icon input:focus{outline:0;border-color:var(--green);box-shadow:0 0 0 3px rgba(31,100,77,.15)}
+.password-toggle{position:absolute;right:10px;background:none;border:0;color:#85968d;padding:6px;cursor:pointer;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.password-toggle:hover{color:var(--ink)}
+.login-alert{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;font-size:13px;line-height:1.4}
+.login-alert-error{background:#fdf0ee;color:#9b3323;border:1px solid #f6cfc7}
+.login-alert-success{background:#edf7f1;color:#1d664a;border:1px solid #cce8d9}
+.login-alert-info{background:#fff9eb;color:#855c14;border:1px solid #f5e2b8}
+.login-submit-btn{height:48px;border:0;border-radius:12px;background:var(--green);color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:all .15s;box-shadow:0 4px 14px rgba(31,100,77,.25);margin-top:4px}
+.login-submit-btn:hover:not(:disabled){background:var(--forest)}
+.login-submit-btn:disabled{opacity:.6;cursor:wait}
+.quick-access-panel{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+.quick-access-header{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.quick-access-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.quick-access-buttons button{border:1px solid var(--line);background:#fafcfa;border-radius:10px;padding:9px 6px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;font-weight:800;color:var(--ink);cursor:pointer;transition:all .15s}
+.quick-access-buttons button:hover{background:#f0f5f2;border-color:#b9cbbf}
+.supabase-status-badge{margin-top:18px;background:var(--mint);border:1px solid #cde0d5;border-radius:12px;padding:12px}
+.status-indicator-row{display:flex;gap:10px;align-items:flex-start}
+.status-indicator-row strong{display:block;font-size:12px;color:var(--forest)}
+.status-indicator-row p{margin:2px 0 0;font-size:11px;color:#496b5c;line-height:1.4}
+.login-footer{text-align:center;font-size:12px;color:var(--muted);line-height:1.6}
+@media(max-width:540px){.login-card{padding:24px 18px}.quick-access-buttons{grid-template-columns:1fr}}
+

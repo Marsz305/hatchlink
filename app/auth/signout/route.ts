@@ -10,5 +10,8 @@ export async function GET(request: Request) {
   const supabase = await createClient();
   await supabase.auth.signOut();
 
-  return NextResponse.redirect(new URL(safeNext, url.origin));
+  const response = NextResponse.redirect(new URL(safeNext, url.origin));
+  response.cookies.delete("hatchlink_user_session");
+
+  return response;
 }
