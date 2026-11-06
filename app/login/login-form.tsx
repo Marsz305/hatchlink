@@ -16,11 +16,6 @@ import {
   AlertCircle,
   Loader2,
   Sparkles,
-  Store,
-  ShoppingBasket,
-  KeyRound,
-  Database,
-  ExternalLink,
 } from "lucide-react";
 import { createClient, isSupabaseConfigured } from "../../lib/supabase/client";
 
@@ -179,20 +174,6 @@ export default function LoginForm() {
     }
   }
 
-  async function handleQuickLogin(quickEmail: string, quickName: string) {
-    setBusy(true);
-    setMessage({
-      type: "info",
-      text: `Logging in as ${quickName}…`,
-    });
-    try {
-      await setSessionCookie(quickEmail, quickName);
-      window.location.assign(next);
-    } catch {
-      setMessage({ type: "error", text: "Unable to start quick session" });
-      setBusy(false);
-    }
-  }
 
   return (
     <div className="login-page-wrapper">
@@ -408,67 +389,6 @@ export default function LoginForm() {
               )}
             </button>
           </form>
-
-          {/* Quick Demo Roles Panel for Testing */}
-          <div className="quick-access-panel">
-            <div className="quick-access-header">
-              <KeyRound className="w-3.5 h-3.5 text-[#c9952f]" />
-              <span>One-Click Test Accounts</span>
-            </div>
-            <div className="quick-access-buttons">
-              <button
-                type="button"
-                onClick={() =>
-                  handleQuickLogin(
-                    "marerec402@gmail.com",
-                    "Primary Administrator"
-                  )
-                }
-                title="Sign in as Admin (marerec402@gmail.com)"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#583b83]" />
-                <span>Admin</span>
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  handleQuickLogin("seller@hatchlink.co.zw", "Tendai Moyo")
-                }
-                title="Sign in as Approved Seller"
-              >
-                <Store className="w-3.5 h-3.5 text-[#b7791f]" />
-                <span>Seller</span>
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  handleQuickLogin(
-                    "buyer@hatchlink.co.zw",
-                    "Grace Chikwanha"
-                  )
-                }
-                title="Sign in as Approved Buyer"
-              >
-                <ShoppingBasket className="w-3.5 h-3.5 text-[#147f9d]" />
-                <span>Buyer</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Database & Supabase Integration Status */}
-          <div className="supabase-status-badge">
-            <div className="status-indicator-row">
-              <Database className="w-4 h-4 text-[#1f644d]" />
-              <div>
-                <strong>Supabase Database & Auth</strong>
-                <p>
-                  {supabaseConfigured
-                    ? "Connected to live Supabase project"
-                    : "Ready for your credentials in .env (Active in preview mode)"}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Footer info */}
