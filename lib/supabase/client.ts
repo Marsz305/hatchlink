@@ -20,3 +20,5 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || "placeholder-anon-key";
   return createBrowserClient(url, key);
 }
+
+export const supabase = createClient();
