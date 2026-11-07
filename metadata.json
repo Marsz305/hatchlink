@@ -1,0 +1,7 @@
+{
+  "name": "HatchLink Zimbabwe",
+  "description": "A managed marketplace for inspected, traceable fertilised poultry eggs in Zimbabwe.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
